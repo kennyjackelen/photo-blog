@@ -1,0 +1,12 @@
+{
+  "name": "photo-blog",
+  "version": "0.0.0",
+  "dependencies": {
+    "core-toolbar": "polymer/core-toolbar#~0.4.0",
+    "core-header-panel": "polymer/core-header-panel#~0.4.0",
+    "paper-shadow": "polymer/paper-shadow#~0.4.0",
+    "photo-album": "~0.1.1",
+    "font-roboto": "polymer/font-roboto#~0.4.2",
+    "paper-fab": "polymer/paper-fab#~0.4.2"
+  }
+}
