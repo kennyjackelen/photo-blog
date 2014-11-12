@@ -7,7 +7,7 @@ name: photo-blog
 description: 
 author:
   name: Kenny Jackelen
-  email: kennyjackelen@gmail.com
+  email: kenny@kennyjackelen.com
 
 # Grunt handles images and assets.
 exclude: ['img', 'css', 'js', 'fonts',
