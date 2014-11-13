@@ -41,5 +41,5 @@ node_modules
 # Ignore config file for fetching picasa images, which contains authentication tokens
 picasa-config.js
 
-# Posts are generated during the build process, they don't belong in the repo
+# Posts are generated during the build process (grunt photos), they don't belong in the repo
 app/_posts

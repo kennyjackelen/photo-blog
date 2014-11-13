@@ -102,11 +102,16 @@ module.exports = function (grunt) {
       }
     },
     clean: {
+      posts: [
+        '<%= yeoman.app %>/_posts/*'
+      ],
+      vulcanized: [
+        '<%= yeoman.app %>/elements/elements.vulcanized.html'
+      ],
       dist: {
         files: [{
           dot: true,
           src: [
-            '<%= yeoman.app %>/_posts/*',
             '<%= yeoman.dist %>/*',
             // Running Jekyll also cleans the target directory.  Exclude any
             // non-standard `keep_files` here (e.g., the generated files
@@ -170,7 +175,8 @@ module.exports = function (grunt) {
     vulcanize: {
       default: {
         options: {
-          strip: true
+          strip: true,
+          inline: true
         },
         files: {
           '<%= yeoman.app %>/elements/elements.vulcanized.html': [
@@ -245,10 +251,6 @@ module.exports = function (grunt) {
             // Like Jekyll, exclude files & folders prefixed with an underscore.
             '!**/_*{,/**}',
             // Explicitly add any files your site needs for distribution here.
-            '_bower_components/platform/platform.js',
-            '_bower_components/platform/platform.js.map',
-            '_bower_components/polymer/polymer.js',
-            '_bower_components/polymer/polymer.js.map'
             //'_bower_components/jquery/jquery.js',
             //'favicon.ico',
             //'apple-touch*.png'
@@ -338,10 +340,9 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'clean',
+    'clean:dist',
     // Jekyll cleans files from the target directory, so must run first
     'vulcanize',
-    'picasa',
     'jekyll:dist',
     'concurrent:dist',
     'useminPrepare',
@@ -351,7 +352,8 @@ module.exports = function (grunt) {
     'imagemin',
     'svgmin',
     'filerev',
-    'usemin'
+    'usemin',
+    'clean:vulcanized'
     ]);
 
   grunt.registerTask('default', [
@@ -361,10 +363,9 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('prod', [
-    'clean',
+    'clean:dist',
     // Jekyll cleans files from the target directory, so must run first
     'vulcanize',
-    'picasa',
     'jekyll:prod',
     'concurrent:dist',
     'useminPrepare',
@@ -375,6 +376,12 @@ module.exports = function (grunt) {
     'svgmin',
     'filerev',
     'usemin',
-    'string-replace:prod'
+    'string-replace:prod',
+    'clean:vulcanized'
+    ]);
+
+  grunt.registerTask('photos', [
+    'clean:posts',
+    'picasa'
     ]);
 };

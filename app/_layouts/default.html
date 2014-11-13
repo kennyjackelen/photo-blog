@@ -34,7 +34,7 @@
         <!-- endbuild -->
 
         <!-- build:js(app) /js/vendor.js -->
-        <script src="/_bower_components/platform/platform.js"></script>
+        <script src="/_bower_components/webcomponentsjs/webcomponents.js"></script>
         <!-- endbuild-->
 
         <!-- build:vulcanized(app) /elements/elements.vulcanized.html -->
@@ -45,11 +45,15 @@
     <body unresolved fullbleed layout vertical>
 
       <core-header-panel flex mode="waterfall-tall" tallclass="tall">
-        <core-toolbar class="titlebar">Photo Blog</core-toolbar>
+        <core-toolbar class="titlebar">
+          <a href="{{ site.baseurl }}" class="title-link">
+            {{ site.name }}
+          </a>
+        </core-toolbar>
         <div class="container">
 
           {{ content }}
-          
+
         </div>
       </core-header-panel>
 

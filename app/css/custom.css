@@ -4,6 +4,41 @@ body {
   font-family: RobotoDraft, Helvetica, Arial, sans-serif;
 }
 
+.title-link,
+.title-link:hover,
+.title-link:active,
+.title-link:visited {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.prev-post-title,
+.next-post-title {
+  line-height: 40px;
+}
+
+.prev-post-title a,
+.next-post-title a {
+  color: #777;
+  text-decoration: none;
+}
+
+.prev-post-title a:hover,
+.next-post-title a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.prev-post-title {
+  padding-left: 8px;
+  text-align: left;
+}
+
+.next-post-title {
+  padding-right: 8px;
+  text-align: right;
+}
+
 .titlebar {
   background:
     linear-gradient(
@@ -33,6 +68,7 @@ body {
   margin: 1em;;
   padding: 1em;
   text-align: justify;
+  border-radius: 2px;
 }
 
 .card,
@@ -60,6 +96,10 @@ body {
 
 .post-title a:hover {
   text-decoration: underline;
+}
+
+.post-date {
+  padding-bottom: 1em;
 }
 
 .footer .contact {
