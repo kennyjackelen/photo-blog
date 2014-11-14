@@ -13,21 +13,35 @@ title: Photo Blog
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}
-<div class="pagination" horizontal justified layout>
-  <div>
+<div class="navigation" horizontal justified layout>
+<div>
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
-      <paper-fab class="mini" icon="arrow-back"></paper-fab>
-    </a>
+  <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+    <paper-fab mini icon="arrow-back"></paper-fab>
+  </a>
   {% endif %}
-  </div>
-
-  <div>
+</div>
+<div class="prev-post-name hidden-xs">
+  {% if paginator.previous_page %}
+  <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+    Previous Page
+  </a>
+  {% endif %}
+</div>
+<div flex></div>
+<div class="next-post-name hidden-xs">
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
-      <paper-fab class="mini" icon="arrow-forward"></paper-fab>
+  <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+    Next Page
     </a>
   {% endif %}
-  </div>
+</div>
+<div>
+  {% if paginator.next_page %}
+  <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+    <paper-fab mini icon="arrow-forward"></paper-fab>
+  </a>
+  {% endif %}
+</div>
 </div>
 {% endif %}

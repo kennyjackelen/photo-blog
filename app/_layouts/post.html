@@ -7,6 +7,50 @@ layout: default
   <div class="post-date">{{ page.date | date_to_string }}</div>
   {{ content }}
 
+{% if page.previous.url %}
+  <a href="{{ page.previous.url }}" class="hidden-sm hidden-md hidden-lg">
+    <paper-fab mini icon="arrow-back" class="prev-post"></paper-fab>
+  </a>
+{% endif %}
+
+{% if page.next.url %}
+  <a href="{{ page.next.url }}" class="hidden-sm hidden-md hidden-lg">
+    <paper-fab mini icon="arrow-forward" class="next-post"></paper-fab>
+  </a>
+{% endif %}
+
+<div class="navigation hidden-xs" horizontal justified layout>
+<div>
+{% if page.previous.url %}
+  <a href="{{ page.previous.url }}">
+    <paper-fab mini icon="arrow-back"></paper-fab>
+  </a>
+{% endif %}
+</div>
+<div class="prev-post-name">
+{% if page.previous.url %}
+  <a href="{{ page.previous.url }}">
+    {{ page.previous.title }}
+  </a>
+{% endif %}
+</div>
+<div flex></div>
+<div class="next-post-name">
+{% if page.next.url %}
+  <a href="{{ page.next.url }}">
+    {{ page.next.title }}
+  </a>
+{% endif %}
+</div>
+<div>
+{% if page.next.url %}
+  <a href="{{ page.next.url }}">
+    <paper-fab mini icon="arrow-forward"></paper-fab>
+  </a>
+{% endif %}
+</div>
+</div>
+<!--
   <div class="pagination" horizontal justified layout>
     <div>
     {% if page.previous.url %}
@@ -15,7 +59,7 @@ layout: default
       </a>
     {% endif %}
     </div>
-    <div class="prev-post-title">
+    <div class="prev-post-title hidden-xs">
     {% if page.previous.url %}
       <a href="{{ page.previous.url }}">
         {{ page.previous.title }}
@@ -25,7 +69,7 @@ layout: default
 
     <div flex></div>
 
-    <div class="next-post-title">
+    <div class="next-post-title hidden-xs">
     {% if page.next.url %}
       <a href="{{ page.next.url }}">
         {{ page.next.title }}
@@ -40,4 +84,5 @@ layout: default
     {% endif %}
     </div>
   </div>
+-->
 </paper-shadow>

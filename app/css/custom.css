@@ -12,33 +12,6 @@ body {
   color: #FFFFFF;
 }
 
-.prev-post-title,
-.next-post-title {
-  line-height: 40px;
-}
-
-.prev-post-title a,
-.next-post-title a {
-  color: #777;
-  text-decoration: none;
-}
-
-.prev-post-title a:hover,
-.next-post-title a:hover {
-  color: #333;
-  text-decoration: underline;
-}
-
-.prev-post-title {
-  padding-left: 8px;
-  text-align: left;
-}
-
-.next-post-title {
-  padding-right: 8px;
-  text-align: right;
-}
-
 .titlebar {
   background:
     linear-gradient(
@@ -65,28 +38,23 @@ body {
 
 .card {
   background-color: #FFFFFF;
-  margin: 1em;;
+  margin: 1em;
   padding: 1em;
-  text-align: justify;
+  text-align: left;
   border-radius: 2px;
 }
 
 .card,
-.pagination {
+.navigation {
   margin-left: auto;
   margin-right: auto;
   max-width: 60em;
 }
 
-.pagination paper-fab {
-  background-color: #1a237e;
-  color: #FFFFFF;
-  color: rgba(255, 255, 255, 0.870588);
-}
-
 .post-title {
   font-size: 2em;
   font-weight: bold;
+  line-height: 1em;
 }
 
 .post-title a {
@@ -104,4 +72,88 @@ body {
 
 .footer .contact {
   float: none;
+}
+
+photo-album {
+  /* full bleed, card has 1em padding */
+  margin-left: -1em;
+  margin-right: -1em;
+}
+
+photo-album::shadow .thumbnail {
+  margin: 1px;
+}
+
+paper-fab {
+  background-color: #1a237e;
+  color: #FFFFFF;
+  color: rgba(255, 255, 255, 0.870588);
+}
+
+.prev-post, .next-post {
+  position: absolute;
+  bottom: 0.67em;
+}
+
+.prev-post {
+  left: 0.67em;
+}
+
+.next-post {
+  right: 0.67em;
+}
+
+.next-post-name {
+  text-align: right;
+}
+
+.prev-post-name,
+.next-post-name {
+  line-height: 40px;
+  padding-left: 8px;
+  padding-right: 8px;
+  white-space: nowrap;
+}
+
+.prev-post-name a,
+.next-post-name a {
+  color: #777;
+  text-decoration: none;
+}
+
+.prev-post-name a:hover,
+.next-post-name a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.navigation {
+  margin-bottom: 1em;
+}
+
+.post .navigation {
+  padding-top: 1em;
+  margin-bottom: 0;
+}
+
+/* Borrowed from Bootstrap v3.3.1 */
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .hidden-lg {
+    display: none !important;
+  }
 }
