@@ -79,10 +79,6 @@ photo-album {
   margin-right: -1em;
 }
 
-photo-album::shadow .thumbnail {
-  margin: 1px;
-}
-
 paper-fab {
   background-color: #1a237e;
   color: #FFFFFF;
