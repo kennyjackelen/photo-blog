@@ -5,7 +5,7 @@
     "core-toolbar": "polymer/core-toolbar#^0.5.0",
     "core-header-panel": "polymer/core-header-panel#^0.5.0",
     "paper-shadow": "polymer/paper-shadow#^0.5.0",
-    "photo-album": "git@github.com:kennyjackelen/photo-album.git#3d01e1eb179bb51eb8140677304d1f3e03911c89",
+    "photo-album": "git@github.com:kennyjackelen/photo-album.git#f17d644652bdb18097884e3d480c343b26e16a6b",
     "font-roboto": "polymer/font-roboto#^0.5.0",
     "paper-fab": "polymer/paper-fab#^0.5.0",
     "core-focusable": "Polymer/core-focusable#^0.5.0"
